@@ -39,7 +39,23 @@ function setup() {
 	ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
  	World.add(world, ground);
 
-
+boxPosition=width/2-100
+	boxY=610
+	bls=createSprite(boxPosition,boxY,20,100)
+	bls.shapeColor=color(255,0,0)
+	blb=Bodies.rectangle(boxPosition+20,boxY,20,100,{isStatic:true} );
+	World.add(world, blb);
+	
+	bbb=createSprite(boxPosition+100,boxY+40,200,20)
+	bbb.shapeColor=color(255,0,0)
+	
+bab=Bodies.rectangle(boxPosition+100,boxY+45-20,200,20,{isStatic:true} );
+World.add(world, bab);
+	brs=createSprite(boxPosition+200,boxY,20,100)
+	brs.shapeColor=color(255,0,0)
+	bzs=Bodies.rectangle(boxPosition+200-20,boxY,20,100,{isStatic:true} );
+	World.add(world, bzs);
+	
 	Engine.run(engine);
   
 }
@@ -56,10 +72,20 @@ function draw() {
 
 function keyPressed() {
  if (keyCode === DOWN_ARROW) {
-    // Look at the hints in the document and understand how to make the package body fall only on press of the Down arrow key.
+    Matter.Body.setStatic(packageBody,false)
 
     
-  }
+  } 
+	else if(keyCode === LEFT_ARROW) {
+	helicopterSprite.x=helicpterSprite.x-20
+		translation={x:-20,y:0}
+		Matter.Body.translate(pacageBody,translation)	
+	}
+else if(keyCode === RIGHT_ARROW) {
+	helicopterSprite.x=helicpterSprite.x+20
+		translation={x:20,y:0}
+		Matter.Body.translate(pacageBody,translation)	
+	}
 }
 
 
