@@ -79,12 +79,12 @@ function keyPressed() {
 	else if(keyCode === LEFT_ARROW) {
 	helicopterSprite.x=helicpterSprite.x-20
 		translation={x:-20,y:0}
-		Matter.Body.translate(pacageBody,translation)	
+		Matter.Body.translate(packageBody,translation)	
 	}
 else if(keyCode === RIGHT_ARROW) {
 	helicopterSprite.x=helicpterSprite.x+20
 		translation={x:20,y:0}
-		Matter.Body.translate(pacageBody,translation)	
+		Matter.Body.translate(packageBody,translation)	
 	}
 }
 
